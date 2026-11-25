@@ -1,0 +1,6 @@
+project: savantenvs/steam-audio
+target: fuzz_dsp_effects
+cmds:
+  - cmd: /mayhem/fuzz_dsp_effects
+    libfuzzer: true
+    timeout: 10

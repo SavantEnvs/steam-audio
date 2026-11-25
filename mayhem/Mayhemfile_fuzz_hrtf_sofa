@@ -1,0 +1,12 @@
+project: savantenvs/steam-audio
+target: fuzz_hrtf_sofa
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_hrtf_sofa/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_hrtf_sofa
+    libfuzzer: true
+    timeout: 10
+    # A SOFA file is HDF5: its metadata alone is >8 KB, the default input cap, so a capped input never
+    # parses (run 3 saw only <=8192-byte inputs and 565 edges). The seeds are 52-186 KB.
+    max_length: 262144

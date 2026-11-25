@@ -1,0 +1,9 @@
+project: savantenvs/steam-audio
+target: fuzz_binaural_effects
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_binaural_effects/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_binaural_effects
+    libfuzzer: true
+    timeout: 10

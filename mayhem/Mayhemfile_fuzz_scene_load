@@ -1,0 +1,9 @@
+project: savantenvs/steam-audio
+target: fuzz_scene_load
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/fuzz_scene_load/testsuite
+cmds:
+  - cmd: /mayhem/fuzz_scene_load
+    libfuzzer: true
+    timeout: 10

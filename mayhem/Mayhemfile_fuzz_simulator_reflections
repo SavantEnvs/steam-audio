@@ -1,0 +1,6 @@
+project: savantenvs/steam-audio
+target: fuzz_simulator_reflections
+cmds:
+  - cmd: /mayhem/fuzz_simulator_reflections
+    libfuzzer: true
+    timeout: 10
